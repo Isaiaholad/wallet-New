@@ -10,3 +10,9 @@ python app.py
 ```
 
 Then open http://127.0.0.1:5000 in your browser.
+
+Set `SUI_RPC` to point at a custom Sui JSON-RPC endpoint if desired:
+
+```bash
+export SUI_RPC=https://fullnode.testnet.sui.io
+```

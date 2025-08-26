@@ -6,7 +6,9 @@
   <button type="submit">Check Balance</button>
 </form>
 
-{% if balance is not none %}
+{% if error %}
+  <p class="error">{{ error }}</p>
+{% elif balance is not none %}
   <p>Balance: {{ balance }}</p>
   <h3>Send SUI</h3>
   <form method="post">
