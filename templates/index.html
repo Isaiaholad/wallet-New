@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="post">
+  <label>Sui Address</label>
+  <input name="address" value="{{ address or '' }}" required>
+  <button type="submit">Check Balance</button>
+</form>
+
+{% if balance is not none %}
+  <p>Balance: {{ balance }}</p>
+  <h3>Send SUI</h3>
+  <form method="post">
+    <input type="hidden" name="address" value="{{ address }}">
+    <label>Recipient</label>
+    <input name="recipient" required>
+    <label>Amount</label>
+    <input name="amount" type="number" min="1" required>
+    <button type="submit">Send</button>
+  </form>
+{% endif %}
+{% endblock %}
